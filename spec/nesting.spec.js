@@ -1,29 +1,30 @@
 import 'jest-dom/extend-expect';
 import React from 'react';
 import { render } from 'react-testing-library';
-import { If } from '../index';
+import { Else, If, Then } from '../index';
 
-describe('if with then', () => {
-  it('renders children when condition matches', () => {
+describe('nested cases', () => {
+  it('renders if in if with', () => {
     const { queryByText } = render(
       <If condition={true}>
-        <div>first</div>
-        <div>second</div>
+        <Then>
+          <If condition={true}>
+            <div>:nested</div>
+            <If condition={false}>
+              <Then>
+                <div>:nested-not</div>
+              </Then>
+              <Else>
+                <div>:nested-nested</div>
+              </Else>
+            </If>
+          </If>
+        </Then>
       </If>
     );
 
-    expect(queryByText('first')).toBeInTheDOM();
-    expect(queryByText('second')).toBeInTheDOM();
-  });
-
-  it('renders children when condition matches', () => {
-    const { queryByText } = render(
-      <If condition={false}>
-        <div>first</div>
-        <div>second</div>
-      </If>
-    );
-
-    expect(queryByText('first')).not.toBeInTheDOM();
+    expect(queryByText(':nested')).toBeInTheDOM();
+    expect(queryByText(':nested-nested')).toBeInTheDOM();
+    expect(queryByText(':nested-not')).not.toBeInTheDOM();
   });
 });

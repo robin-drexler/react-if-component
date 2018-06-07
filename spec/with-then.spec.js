@@ -3,28 +3,53 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import { Else, If, Then } from '../index';
 
-describe('nested cases', () => {
-  it('renders if in if with', () => {
+describe('if with then', () => {
+  it('renders Then when condition matches and there is no Else', () => {
     const { queryByText } = render(
       <If condition={true}>
         <Then>
-          <If condition={true}>
-            <div>:nested</div>
-            <If condition={false}>
-              <Then>
-                <div>:nested-not</div>
-              </Then>
-              <Else>
-                <div>:nested-nested</div>
-              </Else>
-            </If>
-          </If>
+          <div>:then</div>
         </Then>
       </If>
     );
 
-    expect(queryByText(':nested')).toBeInTheDOM();
-    expect(queryByText(':nested-nested')).toBeInTheDOM();
-    expect(queryByText(':nested-not')).not.toBeInTheDOM();
+    expect(queryByText(':then')).toBeInTheDOM();
+  });
+
+  it('renders Else but not Then when condition does not match', () => {
+    const { queryByText } = render(
+      <If condition={false}>
+        <Then>
+          <div>:then</div>
+        </Then>
+        <Else>
+          <div>:else</div>
+          <div>:another-else</div>
+        </Else>
+      </If>
+    );
+
+    expect(queryByText(':then')).not.toBeInTheDOM();
+    expect(queryByText(':else')).toBeInTheDOM();
+    expect(queryByText(':another-else')).toBeInTheDOM();
+  });
+
+  it('renders Then but not Else when condition matches', () => {
+    const { queryByText } = render(
+      <If condition={true}>
+        <Then>
+          <div>:then</div>
+          <div>:another-then</div>
+        </Then>
+        <Else>
+          <div>:else</div>
+        </Else>
+      </If>
+    );
+
+    expect(queryByText(':then')).toBeInTheDOM();
+    expect(queryByText(':another-then')).toBeInTheDOM();
+
+    expect(queryByText(':else')).not.toBeInTheDOM();
   });
 });
