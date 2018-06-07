@@ -1,5 +1,5 @@
 {
-  "name": "react-if-component",
+  "name": "@robin-drexler/react-if",
   "description": "React component to declaratively render react elements conditionally.",
   "version": "1.0.0",
   "source": "index.js",

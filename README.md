@@ -1,4 +1,4 @@
-# react-if-component
+# @robin-drexler/react-if
 
 React component to declaratively render react elements conditionally.
 
@@ -7,13 +7,13 @@ React component to declaratively render react elements conditionally.
 ### yarn
 
 ```
-yarn add react-if-component
+yarn add @robin-drexler/react-if
 ```
 
 ### npm
 
 ```
-npm install react-if-component
+npm install @robin-drexler/react-if
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install react-if-component
 If you do not have an else case, you can omit the `Then` component.
 
 ```js
-import { If } from "react-if-component";
+import { If } from "@robin-drexler/react-if";
 
 const App = () => (
   <div>
@@ -39,7 +39,7 @@ const App = () => (
 When there is an else case, you need to nest `Then` and `Else` inside the `If`
 
 ```js
-import { If, Then, Else } from "react-if-component";
+import { If, Then, Else } from "@robin-drexler/react-if";
 
 const App = () => (
   <div>
