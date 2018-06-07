@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
 class If extends PureComponent {
@@ -35,7 +36,20 @@ class If extends PureComponent {
   }
 }
 
+If.propTypes = {
+  condition: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired
+};
+
 const Then = ({ children }) => children || null;
 const Else = ({ children }) => children || null;
+
+Then.propTypes = {
+  children: PropTypes.node.isRequired
+};
+Then.displayName = 'Then';
+
+Else.propTypes = { children: PropTypes.node.isRequired };
+Else.displayName = 'Else';
 
 export { If, Then, Else };
