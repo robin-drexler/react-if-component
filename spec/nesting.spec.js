@@ -1,9 +1,11 @@
 import 'jest-dom/extend-expect';
 import React from 'react';
-import { render } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 import { Else, If, Then } from '../index';
 
+
 describe('nested cases', () => {
+  beforeEach(cleanup)
   it('renders if in if with', () => {
     const { queryByText } = render(
       <If condition={true}>

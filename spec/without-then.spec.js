@@ -1,9 +1,10 @@
 import 'jest-dom/extend-expect';
 import React from 'react';
-import { render } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 import { If } from '../index';
 
 describe('if without then', () => {
+  beforeEach(cleanup);
   it('renders children when condition matches', () => {
     const { queryByText } = render(
       <If condition={true}>

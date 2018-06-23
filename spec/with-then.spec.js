@@ -1,9 +1,10 @@
 import 'jest-dom/extend-expect';
 import React from 'react';
-import { render } from 'react-testing-library';
+import { cleanup, render } from 'react-testing-library';
 import { Else, If, Then } from '../index';
 
 describe('if with then', () => {
+  beforeEach(cleanup);
   it('renders Then when condition matches and there is no Else', () => {
     const { queryByText } = render(
       <If condition={true}>
