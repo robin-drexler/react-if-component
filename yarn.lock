@@ -2450,9 +2450,9 @@ jest-docblock@^23.2.0:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-dom@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.5.1.tgz#ece27582aafa2e6130f6bc118fae602658fc9731"
+jest-dom@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.5.2.tgz#297ff7c5db32ebe4297ba941d0057d7132af8127"
   dependencies:
     chalk "^2.4.1"
     css "^2.2.3"
