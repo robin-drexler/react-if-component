@@ -11,7 +11,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
     "jest": "23.4.2",
-    "jest-dom": "1.8.1",
+    "jest-dom": "1.11.0",
     "microbundle": "0.4.4",
     "prettier": "1.14.0",
     "react": "16.4.1",
