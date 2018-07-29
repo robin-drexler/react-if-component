@@ -13,7 +13,7 @@
     "jest": "23.4.2",
     "jest-dom": "1.8.1",
     "microbundle": "0.4.4",
-    "prettier": "1.13.7",
+    "prettier": "1.14.0",
     "react": "16.4.1",
     "react-dom": "16.4.1",
     "react-test-renderer": "16.4.1",
