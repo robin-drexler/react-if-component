@@ -14,9 +14,9 @@
     "jest-dom": "1.11.0",
     "microbundle": "0.4.4",
     "prettier": "1.14.0",
-    "react": "16.4.1",
-    "react-dom": "16.4.1",
-    "react-test-renderer": "16.4.1",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-test-renderer": "16.4.2",
     "react-testing-library": "4.1.5"
   },
   "peerDependencies": {
