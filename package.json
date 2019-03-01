@@ -7,10 +7,10 @@
   "module": "dist/index.m.js",
   "license": "MIT",
   "devDependencies": {
-    "babel-jest": "23.4.2",
+    "babel-jest": "23.6.0",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
-    "jest": "23.5.0",
+    "jest": "23.6.0",
     "jest-dom": "3.1.2",
     "microbundle": "0.4.4",
     "prettier": "1.16.0",
