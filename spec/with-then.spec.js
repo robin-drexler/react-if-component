@@ -1,11 +1,11 @@
-import 'jest-dom/extend-expect';
-import React from 'react';
-import { cleanup, render } from 'react-testing-library';
-import { Else, If, Then } from '../index';
+import "@testing-library/jest-dom/extend-expect";
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import { Else, If, Then } from "../index";
 
-describe('if with then', () => {
+describe("if with then", () => {
   beforeEach(cleanup);
-  it('renders Then when condition matches and there is no Else', () => {
+  it("renders Then when condition matches and there is no Else", () => {
     const { queryByText } = render(
       <If condition={true}>
         <Then>
@@ -14,10 +14,10 @@ describe('if with then', () => {
       </If>
     );
 
-    expect(queryByText(':then')).toBeInTheDOM();
+    expect(queryByText(":then")).toBeInTheDocument();
   });
 
-  it('renders Else but not Then when condition does not match', () => {
+  it("renders Else but not Then when condition does not match", () => {
     const { queryByText } = render(
       <If condition={false}>
         <Then>
@@ -30,12 +30,12 @@ describe('if with then', () => {
       </If>
     );
 
-    expect(queryByText(':then')).not.toBeInTheDOM();
-    expect(queryByText(':else')).toBeInTheDOM();
-    expect(queryByText(':another-else')).toBeInTheDOM();
+    expect(queryByText(":then")).not.toBeInTheDocument();
+    expect(queryByText(":else")).toBeInTheDocument();
+    expect(queryByText(":another-else")).toBeInTheDocument();
   });
 
-  it('renders Then but not Else when condition matches', () => {
+  it("renders Then but not Else when condition matches", () => {
     const { queryByText } = render(
       <If condition={true}>
         <Then>
@@ -48,9 +48,9 @@ describe('if with then', () => {
       </If>
     );
 
-    expect(queryByText(':then')).toBeInTheDOM();
-    expect(queryByText(':another-then')).toBeInTheDOM();
+    expect(queryByText(":then")).toBeInTheDocument();
+    expect(queryByText(":another-then")).toBeInTheDocument();
 
-    expect(queryByText(':else')).not.toBeInTheDOM();
+    expect(queryByText(":else")).not.toBeInTheDocument();
   });
 });

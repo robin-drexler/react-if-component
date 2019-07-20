@@ -1,11 +1,11 @@
-import 'jest-dom/extend-expect';
-import React from 'react';
-import { cleanup, render } from 'react-testing-library';
-import { If } from '../index';
+import "@testing-library/jest-dom/extend-expect";
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import { If } from "../index";
 
-describe('if without then', () => {
+describe("if without then", () => {
   beforeEach(cleanup);
-  it('renders children when condition matches', () => {
+  it("renders children when condition matches", () => {
     const { queryByText } = render(
       <If condition={true}>
         <div>first</div>
@@ -13,11 +13,11 @@ describe('if without then', () => {
       </If>
     );
 
-    expect(queryByText('first')).toBeInTheDOM();
-    expect(queryByText('second')).toBeInTheDOM();
+    expect(queryByText("first")).toBeInTheDocument();
+    expect(queryByText("second")).toBeInTheDocument();
   });
 
-  it('renders children when condition matches', () => {
+  it("renders children when condition matches", () => {
     const { queryByText } = render(
       <If condition={false}>
         <div>first</div>
@@ -25,6 +25,6 @@ describe('if without then', () => {
       </If>
     );
 
-    expect(queryByText('first')).not.toBeInTheDOM();
+    expect(queryByText("first")).not.toBeInTheDocument();
   });
 });
